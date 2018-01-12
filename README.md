@@ -17,16 +17,18 @@ docker rmi -f $(docker images -q)
 ```
 
 ## Toggle:
-```
 ### Turn on webBlue
+```
 RESULT=`ssh localhost "/usr/local/bin/docker stop webBlue && /usr/local/bin/docker start webGreen"`
 if [[ $RESULT =~ webBlue.*webGreen ]]; then 
     echo 0
 else 
     echo 1
 fi
+```
 
 ### Turn on webBlue
+```
 RESULT=`ssh localhost "/usr/local/bin/docker stop webGreen && /usr/local/bin/docker start webBlue"`
 if [[ $RESULT =~ webBlue.*webGreen ]]; then 
     echo 0
